@@ -10,11 +10,94 @@
     --fw-reg: 400;
     --fw-bold: 900;
 
-    --clr-bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.5);
+    --clr-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,0.5);
+    --clr-light: #fff;
+    --clr-dark: #000;
 }
 
 /* General Styles */
 
 body {
     font-family: var(--ff-main);
+    background-image: url(background-img.jpg);
+    background-size: cover;
+    background-position: top center;
+    overflow: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    
+    padding: 3em 2em 2em;
+}
+
+input {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    border-bottom: 3px solid var(--clr-dark);
+    transition: 0.2s ease-out;
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+main {
+    flex: 1 1 100%;
+    padding: 25px 25px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Class Styles */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+}
+
+.location,
+.current {
+    color: var(--clr-light);
+}
+
+.location .city {
+    font-size: 3em;
+    font-weight: var(--fw-bold);
+    margin-bottom: 5px;
+}
+
+.location .date {
+    font-size: 1.5em;
+    font-weight: var(--fw-reg);
+}
+
+.current .temp {
+    font-size: 5em;
+    font-weight: var(--fw-bold);
+    text-shadow: 2px 10px rgba(0, 0, 0, 0.6)
+}
+
+.current .weather {
+    font-size: 2em;
+    font-weight: var(--fw-reg);
+    margin-bottom: 15px;
+    font-style: italic;
+    text-shadow: 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+.current .hi-low {
+    font-size: 3.2em;
+    font-weight: var(--fw-reg);
+    text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
 }

@@ -31,6 +31,15 @@ function displayResults(weather) {
     let now = new Date()
     let date = document.querySelector('.location .date')
     date.innerText = dateBuilder(now)
+
+    let temp = document.querySelector('.current .temp')
+    temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`
+
+    let weatherCurrent = document.querySelector('.current .weather')
+    weatherCurrent.innerText = weather.weather[0].main
+
+    let hilow = document.querySelector('.current .hi-low')
+    hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`
 }
 
 function dateBuilder(d) {
